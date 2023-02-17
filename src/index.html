@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket</title>
+</head>
+<body>
+    <h1>Getting Response from the Server</h1>
+    <button type="submit" id="submit">Get Response from the Server</button>
+
+    <script src="socket/index.js">
+        const socket=io()
+
+        socket.on("connection",socket=>{
+            console.log("Connected");
+        })
+
+        let submit=document.getElementById("submit")
+        submit.addEventListener("click",()=>{
+            socket.emit("message","Hey From The User")
+        })
+        console.log("Hello");
+    </script>
+</body>
+</html>
